@@ -1,0 +1,38 @@
+# Nursing Knowledge Base Configuration
+knowledge_base:
+  categories:
+    - infection_control
+    - medication_safety
+    - emergency_procedures
+    - clinical_calculations
+    - patient_care
+    - documentation
+
+# LLM Configuration
+llm:
+  endpoint: "http://10.175.5.70:1234/v1/chat/completions"
+  model: "phi-2"
+  temperature: 0.7
+  max_tokens: 1000
+  timeout: 30
+
+# Embedding Configuration  
+embeddings:
+  model: "all-MiniLM-L6-v2"
+  dimension: 384
+  similarity_threshold: 0.7
+
+# Application Configuration
+app:
+  title: "KKH Nursing Assistant Chatbot"
+  port: 8501
+  debug: false
+  
+# Deployment Configuration
+deployment:
+  platform: "fly.io"
+  region: "sin"
+  memory_mb: 1024
+  cpu_cores: 1
+  min_machines: 0
+  auto_scale: true
