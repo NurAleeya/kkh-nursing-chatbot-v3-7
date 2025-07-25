@@ -1434,14 +1434,7 @@ def main():
             st.session_state.chatbot = NursingChatbot()
             # Force reload to ensure we get the latest Section 01 content
             st.session_state.chatbot.force_reload_knowledge_base()
-    
-    # Display LLM service status
-    chatbot = st.session_state.chatbot
-    if chatbot.use_openai:
-        st.success("🌐 **Cloud Mode**: Connected to OpenAI API (GPT-3.5-turbo)")
-    else:
-        st.info("🖥️ **Local Mode**: Connected to local LM Studio server")
-    
+        
     # Initialize chat sessions management
     if 'chat_sessions' not in st.session_state:
         st.session_state.chat_sessions = {
